@@ -1,0 +1,36 @@
+seed: 42
+device: auto
+
+data:
+  num_pairs: 1000
+  max_len: 8
+  train_ratio: 0.9
+
+model:
+  emb_dim: 64
+  hidden_dim: 128
+
+train:
+  epochs: 25
+  batch_size: 64
+  lr: 0.001
+  clip: 1.0
+
+decoding:
+  beam_size: 3
+  length_penalty: 0.7
+  max_extra_len: 2
+
+paths:
+  checkpoint_dir: checkpoints
+  best_checkpoint: checkpoints/best.pt
+  latest_checkpoint: checkpoints/latest.pt
+  loss_curve: artifacts/loss_curve.svg
+  attention_heatmap: artifacts/attention_heatmap.svg
+
+examples:
+  - i like cats
+  - we read books today
+  - she want coffee at home
+  - they need water tomorrow
+  - he love music every day
